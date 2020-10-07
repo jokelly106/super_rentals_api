@@ -7,7 +7,7 @@ FactoryBot.define do
         lat {Faker::Address.latitude}
         lng {Faker::Address.longitude}
         category {categories.sample}
-        image {Faker::Internet.url}
+        image {'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg'}
         bedrooms {Faker::Number.between(from: 1, to: 10)}
         description {Faker::Lorem.sentence}
     end
