@@ -11,7 +11,7 @@ class RentalsController < ApplicationController
 
   # GET /rentals/1
   def show
-    render json: @rental
+    render jsonapi: @rental
   end
 
   # POST /rentals
@@ -19,18 +19,18 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
 
     if @rental.save
-      render json: @rental, status: :created, location: @rental
+      render jsonapi: @rental, status: :created, location: @rental
     else
-      render json: @rental.errors, status: :unprocessable_entity
+      render jsonapi: @rental.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /rentals/1
   def update
     if @rental.update(rental_params)
-      render json: @rental
+      render jsonapi: @rental
     else
-      render json: @rental.errors, status: :unprocessable_entity
+      render jsonapi: @rental.errors, status: :unprocessable_entity
     end
   end
 
